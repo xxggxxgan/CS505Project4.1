@@ -230,27 +230,27 @@ def main(user):
     os.mkdir('download_files/'+user+'/photos')
 
     idx = 0
-    for post_url, text in text_dic.items():
-        file_path = r'download_files\{1}\posts\{0}.txt'.format(idx, user)
-        idx += 1
-        with open(file_path, 'w', encoding='utf8') as f:
-            for single_text in text:
-                f.write(single_text+'\n')
+    # for post_url, text in text_dic.items():
+    #     file_path = r'download_files\{1}\posts\{0}.txt'.format(idx, user)
+    #     idx += 1
+    #     with open(file_path, 'w', encoding='utf8') as f:
+    #         for single_text in text:
+    #             f.write(single_text+'\n')
     
-    idx = 0
-    for post_url, text in comment_dic.items():
-        file_path = r'download_files\{1}\comments\{0}.txt'.format(idx, user)
-        idx += 1
-        with open(file_path, 'w', encoding='utf8') as f:
-            for single_text in text:
-                f.write(single_text+'\n')
+    # idx = 0
+    # for post_url, text in comment_dic.items():
+    #     file_path = r'download_files\{1}\comments\{0}.txt'.format(idx, user)
+    #     idx += 1
+    #     with open(file_path, 'w', encoding='utf8') as f:
+    #         for single_text in text:
+    #             f.write(single_text+'\n')
     
     for i in range(len(urls)):
         print('Downloading number.{0} media: '.format(i)+urls[i], ' Remaining {0} medias'.format(len(urls)-i-1))
         try:
             content = get_content(urls[i])
             endw = 'mp4' if r'mp4?_nc_ht=scontent' in urls[i] else 'jpg'
-            file_path = r'.\download_files\{0}\photos\{1}.{2}'.format(user, i, endw)
+            file_path = r'\download_files\{0}\photos\{1}.{2}'.format(user, i, endw)
             if not os.path.exists(file_path):
                 with open(file_path, 'wb') as f:
                     print('Download number.{0} media done'.format(i))
