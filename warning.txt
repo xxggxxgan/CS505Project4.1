@@ -1,0 +1,29 @@
+WARNING: Tobacco smoke can harm your children.
+WARNING: Tobacco smoke causes fatal lung disease in nonsmokers.
+WARNING: Smoking causes head and neck cancer.
+WARNING: Smoking causes bladder cancer, which can lead to bloody urine.
+WARNING: Smoking during pregnancy stunts fetal growth.
+WARNING: Smoking can cause heart disease and strokes by clogging arteries.
+WARNING: Smoking causes COPD, a lung disease that can be fatal. (This statement is paired with two different images.)
+WARNING: Smoking reduces blood flow, which can cause erectile dysfunction.
+WARNING: Smoking reduces blood flow to the limbs, which can require amputation.
+WARNING: Smoking causes type 2 diabetes, which raises blood sugar.
+WARNING: Smoking causes age-related macular degeneration, which can lead to blindness.
+WARNING: Smoking causes cataracts, which can lead to blindness.
+SURGEON GENERAL’S WARNING: Smoking Causes Lung Cancer, Heart Disease, Emphysema, and May Complicate Pregnancy
+SURGEON GENERAL’S WARNING: Quitting Smoking Now Greatly Reduces Serious Risks to Your Health
+SURGEON GENERAL’S WARNING: Smoking by Pregnant Women May Result in Fetal Injury, Premature Birth, and Low Birth Weight
+SURGEON GENERAL’S WARNING: Cigarette Smoke Contains Carbon Monoxide
+WARNING: Cigarettes are addictive
+WARNING: Tobacco smoke can harm your children
+WARNING: Cigarettes cause fatal lung disease
+WARNING: Cigarettes cause cancer
+WARNING: Cigarettes cause strokes and heart disease
+WARNING: Smoking during pregnancy can harm your baby
+WARNING: Smoking can kill you
+WARNING: Tobacco smoke causes fatal lung disease in non-smokers
+WARNING: Quitting smoking now greatly reduces serious risks to your health
+WARNING: This product may cause mouth cancer
+WARNING: This product may cause gum disease and tooth loss
+WARNING: This product is not a safe alternative to cigarettes
+WARNING: Smokeless tobacco is addictive
