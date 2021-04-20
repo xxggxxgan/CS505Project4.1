@@ -8,7 +8,7 @@ amb_sponsorship_tag = ['#thanks', '#sp', '#spon', '#ambassador', '#collab']
 user1 = 'swishersweets'
 user2 = 'backwoods_cigars'
 
-pattern = r"#(.*)?\s*"
+pattern = r"#[a-zA-Z0-9]+\s*"
 def contain_tag(text, tag_set):
     for tag in tag_set:
         if tag in text:
@@ -31,7 +31,7 @@ for user in [user1, user2]:
                     df['text'].append(remove_tag(text))
                     df['exp_tag'].append(contain_tag(text, exp_sponsorship_tag))
                     df['amb_tag'].append(contain_tag(text, amb_sponsorship_tag))
-                    df['id'].append(id_)
+                    df['id'].append(user+id_)
 
 df = pd.DataFrame(df)
 df.to_csv('download_files/comment.csv')
@@ -42,12 +42,11 @@ for user in [user1, user2]:
         for file_name in file_list:
             id_ = file_name.split('.')[0]
             with open(os.path.join(path, file_name), 'r', encoding='utf8') as f:
-                f_content = f.read().strip().split('\n')
-                for text in f_content:
-                    df['text'].append(remove_tag(text))
-                    df['exp_tag'].append(contain_tag(text, exp_sponsorship_tag))
-                    df['amb_tag'].append(contain_tag(text, amb_sponsorship_tag))
-                    df['id'].append(id_)
+                text = f.read().replace('\n', ' ').strip()
+                df['text'].append(remove_tag(text))
+                df['exp_tag'].append(contain_tag(text, exp_sponsorship_tag))
+                df['amb_tag'].append(contain_tag(text, amb_sponsorship_tag))
+                df['id'].append(user+' '+id_)
 
 df = pd.DataFrame(df)
 df.to_csv('download_files/posts.csv')
