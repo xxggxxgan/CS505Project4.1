@@ -20,17 +20,7 @@ def remove_tag(text):
     text_ = re.sub(pattern, "", text)
     return text_
 
-extract_pattern = r"#[a-zA-Z0-9]+\s*"
-def extract_tag(text):
-    text_ = re.findall(extract_pattern,text)
-    if len(text_) == 0:
-        return 'None'
-    else:
-        return ' '.join(text_)
-
-    
-
-df = {'id': [], 'text': [], 'exp_tag': [], 'amb_tag': [], 'extract_tag': []}
+df = {'id': [], 'text': [], 'exp_tag': [], 'amb_tag': []}
 for user in [user1, user2]:
     for path, dir_list, file_list in os.walk('download_files/%s/comments' % user):
         for file_name in file_list:
@@ -39,7 +29,6 @@ for user in [user1, user2]:
                 f_content = f.read().strip().split('\n')
                 for text in f_content:
                     df['text'].append(remove_tag(text))
-                    df['extract_tag'].append(extract_tag(text))
                     df['exp_tag'].append(contain_tag(text, exp_sponsorship_tag))
                     df['amb_tag'].append(contain_tag(text, amb_sponsorship_tag))
                     df['id'].append(user+id_)
@@ -47,7 +36,7 @@ for user in [user1, user2]:
 df = pd.DataFrame(df)
 df.to_csv('download_files/comment.csv')
 
-df = {'id': [], 'text': [], 'exp_tag': [], 'amb_tag': [], 'extract_tag': []}
+df = {'id': [], 'text': [], 'exp_tag': [], 'amb_tag': []}
 for user in [user1, user2]:
     for path, dir_list, file_list in os.walk('download_files/%s/posts' % user):
         for file_name in file_list:
@@ -55,7 +44,6 @@ for user in [user1, user2]:
             with open(os.path.join(path, file_name), 'r', encoding='utf8') as f:
                 text = f.read().replace('\n', ' ').strip()
                 df['text'].append(remove_tag(text))
-                df['extract_tag'].append(extract_tag(text))
                 df['exp_tag'].append(contain_tag(text, exp_sponsorship_tag))
                 df['amb_tag'].append(contain_tag(text, amb_sponsorship_tag))
                 df['id'].append(user+' '+id_)
